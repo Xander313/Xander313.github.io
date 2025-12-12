@@ -3,166 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <title>Curriculum Vitae - Xander313</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Íconos -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #0d1117;
-        color: #e6edf3;
-        margin: 0;
-        padding: 40px;
-        line-height: 1.6;
-    }
-    h1, h2, h3 { color: #00eaff; }
-    .section {
-        background: #161b22;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 25px;
-    }
-
-
-
-.header {
+/* ================== GENERAL =================== */
+body {
+    font-family: Arial, sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;
-    gap: 20px; /* separación entre foto y texto */
-    margin-bottom: 30px;
 }
 
-.foto {
-    width: 140px;
-    height: 140px;
+/* ================== SIDEBAR =================== */
+.sidebar {
+    width: 260px;
+    background: #161b22;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    border-right: 1px solid #30363d;
+}
+
+.sidebar img {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
     border: 3px solid #00eaff;
 }
 
-    
-    a { color: #58a6ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { margin-top: 0; }
+.sidebar h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #00eaff;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #58a6ff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.sidebar a:hover {
+    background: #21262d;
+}
+
+/* ================== CONTENIDO =================== */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    width: 100%;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================== TITULOS =================== */
+h1, h2, h3 { color: #00eaff; }
+
+/* ================== CARDS PROYECTOS =================== */
+.proyecto-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 20px rgba(0, 238, 255, 0.2);
+}
+
+.proyecto-title {
+    color: #00eaff;
+    font-weight: bold;
+}
+
+/* ================== MODO CLARO =================== */
+.light-mode {
+    background: #f5f5f5 !important;
+    color: #111 !important;
+}
+
+.light-mode .sidebar {
+    background: #e9e9e9;
+    color: #111;
+}
+
+.light-mode .sidebar a {
+    color: #111;
+}
+
+.light-mode .section,
+.light-mode .proyecto-card {
+    background: white;
+    color: black;
+    border-color: #ccc;
+}
 </style>
 </head>
 <body>
 
-<div class="header">
-    <img src="https://lh3.googleusercontent.com/a/ACg8ocKUm9x2cA6AM0q6u_kn9mNHhPaRsn0Pk7kNPg3seA8zKaBcwHI=s288-c-no" class="foto" alt="Foto de perfil">
-    
-    <div>
-        <h1>Curriculum Vitae</h1>
-        <h2>Jhonn Alex Roldán Daquilema (Xander313)</h2>
-    </div>
+<!-- ================== SIDEBAR =================== -->
+<div class="sidebar">
+    <img src="https://lh3.googleusercontent.com/a/ACg8ocKUm9x2cA6AM0q6u_kn9mNHhPaRsn0Pk7kNPg3seA8zKaBcwHI=s288-c-no">
+    <h2>Jhonn Alex Roldán (Xander313)</h2>
+
+    <a href="#perfil"><i class="bi bi-person"></i> Perfil</a>
+    <a href="#formacion"><i class="bi bi-mortarboard"></i> Formación</a>
+    <a href="#proyectos"><i class="bi bi-diagram-3"></i> Proyectos</a>
+    <a href="#habilidades"><i class="bi bi-cpu"></i> Habilidades</a>
+    <a href="#articulo"><i class="bi bi-journal-text"></i> Artículo</a>
+
+    <button onclick="toggleMode()" class="btn btn-outline-info w-100 mt-3">
+        <i class="bi bi-brightness-high"></i> Modo Claro/Oscuro
+    </button>
 </div>
 
+<!-- ================== CONTENIDO PRINCIPAL =================== -->
+<div class="content">
 
-<!-- ============================
-      SECCIÓN: DATOS PERSONALES
-=============================== -->
-<div class="section">
-    <h3>Datos Personales</h3>
-    <p><strong>Nombre:</strong> Jhonn Alex Roldán Daquilema</p>
-    <p><strong>Email:</strong> (tu email aquí)</p>
-    <p><strong>Teléfono:</strong> (tu número aquí)</p>
-    <p><strong>Dirección:</strong> (tu ciudad aquí)</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/Xander313" target="_blank">github.com/Xander313</a></p>
-</div>
-
-<!-- ============================
-      SECCIÓN: PERFIL PROFESIONAL
-=============================== -->
-<div class="section">
+<!-- PERFIL -->
+<section id="perfil">
+    <h1>Curriculum Vitae</h1>
     <h3>Perfil Profesional</h3>
     <p>
-        Estudiante y desarrollador en formación de la carrera de Ingeniería en Sistemas de Información  
-        en la Universidad Técnica de Cotopaxi. Con experiencia desarrollando soluciones software, aplicaciones web,
-        sistemas IoT, SIG, microservicios y automatización.  
-        Motivado por la innovación tecnológica y la creación de herramientas que generen impacto social.
+        Estudiante y desarrollador de Ingeniería en Sistemas de Información  
+        en la Universidad Técnica de Cotopaxi. Experiencia en desarrollo web, IoT,
+        ciencia de datos, SIG y automatización.
     </p>
-</div>
+</section>
 
-<!-- ============================
-      SECCIÓN: FORMACIÓN
-=============================== -->
-<div class="section">
+<hr>
+
+<!-- FORMACIÓN -->
+<section id="formacion">
     <h3>Formación Académica</h3>
 
-    <h4>🎓 Ingeniería en Sistemas de Información – Universidad Técnica de Cotopaxi</h4>
-    <p><em>Asignaturas relevantes (según malla curricular):</em></p>
-    <ul>
-        <li>Fundamentos e Ingeniería de Software</li>
-        <li>Programación Estructurada y Orientada a Objetos</li>
-        <li>Desarrollo y Aplicaciones Web</li>
-        <li>Redes de Transmisión de Datos y Sistemas Distribuidos</li>
-        <li>Minería de Datos y Web Mining</li>
-        <li>Aplicación con Base de Datos</li>
-        <li>Inteligencia Artificial</li>
-        <li>Gestión de la Información</li>
-        <li>Control y Auditoría Informática</li>
-        <li>Computación en la Nube, Arquitectura y Seguridad</li>
-        <li>Sistemas Operativos y Configuración de Servicios</li>
-    </ul>
-    <p><small>Fuente: Malla curricular de Ingeniería en Sistemas de Información UTC :contentReference[oaicite:1]{index=1}</small></p>
-
-    <h4>Estudios Secundarios</h4>
-    <p>(Aquí colocas el nombre de tu colegio, año de graduación, especialidad si aplica)</p>
-</div>
-
-<!-- ============================
-      SECCIÓN: PROYECTOS
-=============================== -->
-<div class="section">
-    <h3>Proyectos Desarrollados</h3>
-    <p>A continuación, algunos de los proyectos publicados en GitHub:</p>
+    <h4>🎓 Ingeniería en Sistemas de Información – UTC</h4>
+    <p>Asignaturas destacadas:</p>
 
     <ul>
-        <li><a href="https://github.com/Xander313/sw_coacmlp" target="_blank">sw_coacmlp</a></li>
-        <li><a href="https://github.com/Xander313/BI" target="_blank">BI (Business Intelligence)</a></li>
-        <li><a href="https://github.com/Xander313/SIGGrupo13" target="_blank">SIGGrupo13 – Sistema Geográfico</a></li>
-        <li><a href="https://github.com/Xander313/HydroSys" target="_blank">HydroSys (IoT Agua + ESP32)</a></li>
-        <li><a href="https://github.com/Xander313/cloudWork" target="_blank">cloudWork</a></li>
-        <li><a href="https://github.com/Xander313/propiedadIntelectual" target="_blank">Sistema Propiedad Intelectual</a></li>
-        <li><a href="https://github.com/Xander313/SIGTurismo" target="_blank">SIGTurismo</a></li>
-        <li><a href="https://github.com/Xander313/ASPDOTNETDJANGO" target="_blank">ASPDOTNET + Django</a></li>
-        <li><a href="https://github.com/Xander313/Logistica" target="_blank">Regresión Logística</a></li>
-        <li><a href="https://github.com/Xander313/Geolocalizacion" target="_blank">Geolocalización</a></li>
+        <li>Ingeniería de Software</li>
+        <li>Desarrollo Web</li>
+        <li>Programación Orientada a Objetos</li>
+        <li>Sistemas Operativos y Redes</li>
+        <li>IoT & Computación en la Nube</li>
+        <li>Minería de Datos e Inteligencia Artificial</li>
     </ul>
 
-    <p><strong>GitHub completo:</strong>  
-    <a href="https://github.com/Xander313" target="_blank">github.com/Xander313</a></p>
+    <h4>🏫 Estudios Secundarios</h4>
+    <p>Bachillerato en (ingresa aquí la especialidad).</p>
+</section>
+
+<hr>
+
+<!-- ================== PROYECTOS =================== -->
+<section id="proyectos">
+<h3>Proyectos por Categoría</h3>
+
+<!-- ==== IoT ==== -->
+<h4 class="mt-4"><i class="bi bi-wifi"></i> IoT</h4>
+<div class="row g-3">
+
+    <div class="col-md-6">
+        <div class="card proyecto-card p-3">
+            <h4 class="proyecto-title">HydroSys</h4>
+            <p>Sistema IoT de monitoreo hídrico con ESP32 + sensores de flujo.</p>
+            <a href="https://github.com/Xander313/HydroSys" target="_blank" class="btn btn-outline-info">Ver</a>
+        </div>
+    </div>
+
 </div>
 
-<!-- ============================
-      SECCIÓN: ARTÍCULO PUBLICADO
-=============================== -->
-<div class="section">
-    <h3>Artículo Publicado</h3>
-    <p><strong>Título:</strong> Desafíos en el desarrollo vial y su impacto comunitario en la parroquia El Chaupi, Ecuador</p>
+<!-- ==== WEB ==== -->
+<h4 class="mt-4"><i class="bi bi-globe"></i> Desarrollo Web</h4>
+<div class="row g-3">
 
-    <p><strong>Autores:</strong><br>
-    Jhonn Alex Roldan Daquilema<br>
-    Diego Johnathan Telenchana Punina<br>
-    Eddy Álvaro Lucero Tipán<br>
-    Nashely Mikaela Betancourt Toscano<br>
-    GAD Parroquial El Chaupi
-    </p>
+    <div class="col-md-6">
+        <div class="card proyecto-card p-3">
+            <h4 class="proyecto-title">SIGGrupo13</h4>
+            <p>Sistema de información geográfica para análisis territorial.</p>
+            <a href="https://github.com/Xander313/SIGGrupo13" class="btn btn-outline-info" target="_blank">Ver</a>
+        </div>
+    </div>
 
-    <p><strong>Publicado en:</strong> <a href="https://investigacion.utc.edu.ec/index.php/ciya/article/view/1060" target="_blank">CIYA – Ciencia e Investigación Aplicada</a></p>
+    <div class="col-md-6">
+        <div class="card proyecto-card p-3">
+            <h4 class="proyecto-title">Propiedad Intelectual</h4>
+            <p>Gestión de documentos y trámites académicos.</p>
+            <a href="https://github.com/Xander313/propiedadIntelectual" class="btn btn-outline-info" target="_blank">Ver</a>
+        </div>
+    </div>
+
 </div>
 
-<!-- ============================
-      SECCIÓN: HABILIDADES
-=============================== -->
-<div class="section">
-    <h3>Habilidades Técnicas</h3>
-    <ul>
-        <li>Desarrollo Web: HTML, CSS, JS, Django, Laravel, ASP.NET</li>
-        <li>IoT: ESP32, sensores, protocolos MQTT/HTTP</li>
-        <li>Bases de datos: MySQL, PostgreSQL, SQL Server</li>
-        <li>Cloud: AWS, Docker, Docker Compose</li>
-        <li>Movil: Flutter</li>
-        <li>Data: Python, Machine Learning básico</li>
-    </ul>
+<!-- ==== CLOUD ==== -->
+<h4 class="mt-4"><i class="bi bi-cloud"></i> Cloud</h4>
+<div class="row g-3">
+
+    <div class="col-md-6">
+        <div class="card proyecto-card p-3">
+            <h4 class="proyecto-title">awsCloud</h4>
+            <p>Sistemas desplegados en AWS con arquitectura escalable.</p>
+            <a href="https://github.com/Xander313/awsCloud" class="btn btn-outline-info" target="_blank">Ver</a>
+        </div>
+    </div>
+
 </div>
+
+<!-- ==== IA / DATA ==== -->
+<h4 class="mt-4"><i class="bi bi-robot"></i> Inteligencia Artificial / Data</h4>
+<div class="row g-3">
+
+    <div class="col-md-6">
+        <div class="card proyecto-card p-3">
+            <h4 class="proyecto-title">Regresión Logística</h4>
+            <p>Modelo ML aplicado a dataset real de predicciones.</p>
+            <a href="https://github.com/Xander313/Logistica" class="btn btn-outline-info" target="_blank">Ver</a>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- ARTÍCULO -->
+<section id="articulo">
+<h3>Artículo Publicado</h3>
+
+<p><strong>Título:</strong> Desafíos en el desarrollo vial y su impacto comunitario en la parroquia El Chaupi, Ecuador</p>
+
+<p><strong>Publicado en:</strong>  
+<a href="https://investigacion.utc.edu.ec/index.php/ciya/article/view/1060" target="_blank">CIYA – Ciencia e Investigación Aplicada</a></p>
+</section>
+
+<hr>
+
+<!-- HABILIDADES -->
+<section id="habilidades">
+<h3>Habilidades Técnicas</h3>
+<ul>
+    <li>Desarrollo Web (Django, Laravel, ASP.NET, JS)</li>
+    <li>IoT con ESP32</li>
+    <li>AWS, Docker, Docker Compose</li>
+    <li>Bases de datos relacionales</li>
+    <li>Flutter móvil</li>
+    <li>Machine Learning básico</li>
+</ul>
+</section>
+
+</div>
+
+<!-- SCRIPT MODO OSCURO -->
+<script>
+function toggleMode() {
+    document.body.classList.toggle("light-mode");
+}
+</script>
 
 </body>
 </html>
